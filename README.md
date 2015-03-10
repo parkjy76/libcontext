@@ -1,9 +1,9 @@
 # libcontext for PHP
 * データフォーマット変換ライブラリ
 * command design pattern
-* The attribute is not supported in XML
+* XML's attribute is not supported
 
-## Pattern of converting and Examples
+## Conversion patterns and Examples
 + XML -> Object
 ```php
 <?php
