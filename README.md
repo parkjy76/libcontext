@@ -1,10 +1,13 @@
 # libcontext for PHP
-* データフォーマット変換ライブラリ
+* context conversion
 * command design pattern
+* support XML, JSON and Query-string.
+
+## Limitation
 * XML's attribute is not supported
 
 ## Conversion patterns and Examples
-+ XML -> Object
++ XML -> Object of PHP
 ```php
 <?php
 $context = new LibContext;
@@ -13,7 +16,7 @@ $context->addCommand(new LibContext_XML_Decode);
 $obj = $this->_context->run($xml);
 ```
 
-+ XML -> Array
++ XML -> Array of PHP
 ```php
 <?php
 $context = new LibContext;
@@ -24,7 +27,7 @@ $context->addCommand(new LibContext_Json_Decode);
 $arr = $this->_context->run($xml);
 ```
 
-+ JSON -> Object
++ JSON -> Object of PHP
 ```php
 <?php
 $context = new LibContext;
@@ -33,7 +36,7 @@ $context->addCommand(new LibContext_Json_Decode(FALSE));
 $obj = $this->_context->run($json);
 ```
 
-+ JSON -> Array
++ JSON -> Array of PHP
 ```php
 <?php
 $context = new LibContext;
@@ -42,7 +45,7 @@ $context->addCommand(new LibContext_Json_Decode());
 $arr = $this->_context->run($json);
 ```
 
-+ Query String -> Array
++ Query String -> Array of PHP
 ```php
 <?php
 $context = new LibContext;
