@@ -11,107 +11,107 @@
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_XML_Decode);
-$obj = $this->_context->run($xml);
+$obj = $context->run($xml);
+//$context->flushCommand();
 ```
 
 + XML -> Array of PHP
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_XML_Decode);
 $context->addCommand(new LibContext_Json_Encode);
 $context->addCommand(new LibContext_Json_Decode);
-$arr = $this->_context->run($xml);
+$arr = $context->run($xml);
+//$context->flushCommand();
 ```
 
 + JSON -> Object of PHP
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Json_Decode(FALSE));
-$obj = $this->_context->run($json);
+$obj = $context->run($json);
+//$context->flushCommand();
 ```
 
 + JSON -> Array of PHP
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Json_Decode());
-$arr = $this->_context->run($json);
+$arr = $context->run($json);
+//$context->flushCommand();
 ```
 
 + Query String -> Array of PHP
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Query_Decode);
-$arr = $this->_context->run($queryString);
+$arr = $context->run($queryString);
+//$context->flushCommand();
 ```
 
 + XML -> JSON
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_XML_Decode);
 $context->addCommand(new LibContext_Json_Encode);
-$json = $this->_context->run($xml);
+$json = $context->run($xml);
+//$context->flushCommand();
 ```
 
 + XML -> Query String
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_XML_Decode);
 $context->addCommand(new LibContext_Json_Encode);
 $context->addCommand(new LibContext_Json_Decode);
 $context->addCommand(new LibContext_Query_Encode);
-$queryString = $this->_context->run($xml);
+$queryString = $context->run($xml);
+//$context->flushCommand();
 ```
 
 + JSON -> XML
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Json_Decode);
 $context->addCommand(new LibContext_XML_Encode);
-$xml = $this->_context->run($json);
+$xml = $context->run($json);
+//$context->flushCommand();
 ```
 
 + JSON -> Query String
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Json_Decode);
 $context->addCommand(new LibContext_Query_Encode);
-$queryString = $this->_context->run($json);
+$queryString = $context->run($json);
+//$context->flushCommand();
 ```
 
 + Query String -> XML
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Query_Decode);
 $context->addCommand(new LibContext_XML_Encode);
-$xml = $this->_context->run($queryString);
+$xml = $context->run($queryString);
+//$context->flushCommand();
 ```
 
 + Query String -> Json
 ```php
 <?php
 $context = new LibContext;
-$context->flushCommand();
 $context->addCommand(new LibContext_Query_Decode);
 $context->addCommand(new LibContext_Json_Encode);
-$json = $this->_context->run($queryString);
+$json = $context->run($queryString);
+//$context->flushCommand();
 ```
