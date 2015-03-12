@@ -19,7 +19,7 @@ $xml = $context->run($arr);
 /** test
 // data
 $arr = [
-  amount" => [
+  "amount" => [
     [
       "amount" => [
         500, 
