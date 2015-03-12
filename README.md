@@ -1,12 +1,64 @@
 # libcontext for PHP
 * context conversion
 * command design pattern
+* this is able to convert array with numeric index to XML without defining attribute.
 * support XML, JSON and Query-string.
 
 ## Limitation
 * XML's attribute is not supported
 
 ## Conversion patterns and Examples
++ Array of PHP -> XML
+```php
+<?php
+$context = new LibContext;
+$context->addCommand(new LibContext_XML_Encode);
+$xml = $context->run($arr);
+//$context->flushCommand();
+
+/** test
+// data
+$arr = [
+  amount" => [
+    [
+      "amount" => [
+        500, 
+        [
+          "amount" => [
+            500,
+            500,
+          ],
+        ],
+      ],
+    ],
+    500
+  ],
+  "id" => "abcdefg"
+];
+
+// result
+<?xml version="1.0" encoding="UTF-8"?><root><amount><amount>500</amount><amount><amount>500</amount><amount>500</amount></amount></amount><amount>500</amount><id>abcdefg</id></root>
+*/
+```
+
++ Array of PHP -> JSON
+```php
+<?php
+$context = new LibContext;
+$context->addCommand(new LibContext_Json_Encode);
+$json = $context->run($arr);
+//$context->flushCommand();
+```
+
++ Array of PHP -> Query String
+```php
+<?php
+$context = new LibContext;
+$context->addCommand(new LibContext_Query_Encode);
+$queryString = $context->run($arr);
+//$context->flushCommand();
+```
+
 + XML -> Object of PHP
 ```php
 <?php
