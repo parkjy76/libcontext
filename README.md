@@ -5,7 +5,7 @@
 * support XML, JSON and Query-string.
 
 ## Limitation
-* XML's attribute is not supported
+* XML's attribute is not supported.
 
 ## Conversion patterns and Examples
 + Array of PHP -> XML
